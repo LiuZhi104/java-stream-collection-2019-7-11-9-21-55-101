@@ -6,6 +6,8 @@ import java.util.List;
 
 public class CollectionOperator {
     public List<Integer> getListByInterval(int left, int right) {
+        int min = Math.min(left, right);
+        int max = Math.max(left, right);
         throw new NotImplementedException();
     }
 
