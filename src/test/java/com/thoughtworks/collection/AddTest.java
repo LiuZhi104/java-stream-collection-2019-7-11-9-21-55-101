@@ -52,7 +52,6 @@ public class AddTest {
         List<Integer> resultList = Arrays.asList(result);
 
         Add add = new Add();
-
         assertThat(add.getTripleOfOddAndAddTwo(arrayList)).isEqualTo(resultList);
     }
 

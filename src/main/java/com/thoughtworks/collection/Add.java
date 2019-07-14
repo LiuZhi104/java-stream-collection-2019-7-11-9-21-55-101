@@ -2,7 +2,10 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 
@@ -18,22 +21,12 @@ public class Add {
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
-        int sum=0;
-        for(int i=0;i<arrayList.size();i++){
-            sum+=arrayList.get(i)*3+2;
-        }
-        return  sum;
+        return arrayList.stream().mapToInt(n->n*3+2).sum();
+
     }
 
     public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {
-        for (int i = 0; i < arrayList.size(); i++){
-            if(arrayList.get(i)%2!=0) {
-               arrayList.set(i,arrayList.get(i) * 3 + 2);
-            }
-        }
-        return  arrayList;
-
-
+        return arrayList.stream().filter(n->n%2!=0).map(n->n*3+2).collect(Collectors.toList());
     }
 
     public int getSumOfProcessedOdds(List<Integer> arrayList) {
@@ -45,15 +38,7 @@ public class Add {
 //    }
 
     public double getAverageOfEven(List<Integer> arrayList) {
-        int sum=0;
-        int count=0;
-        for (int i = 0; i < arrayList.size(); i++){
-            if(arrayList.get(i)%2==0) {
-               sum+= arrayList.get(i);
-               count++;
-            }
-        }
-        return (double)sum/count;
+        return (arrayList.stream().filter(n->n%2==0).mapToDouble(n->n).sum())/2;
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
@@ -61,12 +46,7 @@ public class Add {
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
-        for (int i = 0; i < arrayList.size(); i++){
-            if(arrayList.get(i)%2!=0) {
-              arrayList.remove(i);
-            }
-        }
-        return arrayList;
+        return arrayList.stream().filter(n->n%2==0).collect(Collectors.toList());
     }
 
 //    public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
