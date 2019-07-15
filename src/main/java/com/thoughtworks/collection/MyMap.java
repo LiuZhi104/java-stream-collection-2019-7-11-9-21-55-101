@@ -23,7 +23,7 @@ public class MyMap {
     }
 
     public List<String> mapLetter() {
-        throw new NotImplementedException();
+        return  array.stream().map(n->String.valueOf((char)(n+96)).toLowerCase()).collect(Collectors.toList());
 
     }
 
