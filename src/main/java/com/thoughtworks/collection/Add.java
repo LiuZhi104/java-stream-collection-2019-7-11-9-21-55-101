@@ -40,7 +40,7 @@ public class Add {
 //    }
 
     public double getAverageOfEven(List<Integer> arrayList) {
-        return (arrayList.stream().filter(n->n%2==0).mapToDouble(n->n).sum())/2;
+        return (arrayList.stream().filter(n->n%2==0).mapToDouble(n->n).sum()/2);
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {

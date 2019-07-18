@@ -59,7 +59,8 @@ public class AddTest {
 //    public void should_get_sum_of_processed_odd() {
 //        //求数组中奇数元素的3倍加5的和
 //        Integer[] array = new Integer[]{1, 5, 7, 12, 11, 35, 54, 67, 70};
-//        List<Integer> arrayList = Arrays.asList(array);
+//        List<Integer> arrayList
+//        = Arrays.asList(array);
 //        Add add = new Add();
 //
 //        assertThat(add.getSumOfProcessedOdds(arrayList)).isEqualTo(408);
